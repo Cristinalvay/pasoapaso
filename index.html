@@ -3,631 +3,910 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paso a Paso — Accesorios Artesanales</title>
-  <meta name="description" content="Bolsos de crochet, gorros, bufandas, mitones y accesorios con lentejuelas hechos a mano. Descubre la colección de Paso a Paso." />
+
+  <title>Paso a Paso — Accesorios hechos a mano</title>
+  <meta name="description" content="Accesorios hechos a mano por Paso a Paso: bolsos, gorros, bufandas, mitones, collares y cinturones." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700&display=swap" rel="stylesheet" />
+
   <style>
     :root {
-      --black: #0e0e0e;
-      --white: #f8f6f1;
-      --lime: #c8f03a;
-      --red: #e63946;
-      --mustard: #e8a820;
-      --blue: #1a5fa8;
-      --purple: #7b2d8b;
-      --gray: #2a2a2a;
-      --gray-mid: #555;
-      --gray-light: #e8e6e0;
+      --azul: #9CCEFF;
+      --azul-claro: #cfe0f6;
+      --granate: #7a0d2a;
+      --granate-oscuro: #4d0719;
+      --granate-suave: #9b1637;
+      --crema: #fff8ec;
+      --tinta: #24030c;
+      --borde: rgba(122, 13, 42, 0.18);
+      --sombra: 0 24px 70px rgba(77, 7, 25, 0.16);
+      --radio: 28px;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      background: var(--black);
-      color: var(--white);
-      font-family: 'DM Sans', sans-serif;
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(255,248,236,0.42), transparent 34rem),
+        linear-gradient(180deg, var(--azul) 0%, #9CCEFF 46%, var(--crema) 100%);
+      color: var(--granate);
+      font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 16px;
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #9CCEFF;
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.25rem 2rem;
-      background: rgba(14,14,14,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 0.5px solid #ffffff14;
+      gap: 24px;
+      padding: 18px 0;
     }
-    .nav-logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.1rem;
-      color: var(--white);
+
+    .brand {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.25rem;
       text-decoration: none;
-      letter-spacing: 0.02em;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
     }
+
     .nav-links {
       display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 13px;
-      color: #aaa;
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--lime); }
-    .nav-ig {
-      display: flex;
       align-items: center;
-      gap: 6px;
-      background: var(--lime);
-      color: var(--black);
-      font-size: 12px;
-      font-weight: 500;
-      padding: 7px 16px;
-      border-radius: 99px;
-      text-decoration: none;
-      transition: background 0.2s;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
-    .nav-ig:hover { background: #b5d832; }
 
-    /* ── HERO ── */
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      opacity: 0.72;
+      transition: opacity 180ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      opacity: 1;
+    }
+
+    .ig-link,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      line-height: 1;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+
+    .ig-link {
+      padding: 10px 16px;
+      background: var(--granate);
+      color: var(--azul-claro);
+      font-size: 0.78rem;
+    }
+
+    .ig-link:hover,
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+    }
+
+    main {
+      position: relative;
+    }
+
+    /* HERO */
+
     .hero {
-      min-height: 100vh;
+      width: min(1180px, calc(100% - 32px));
+      min-height: calc(100vh - 72px);
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 8rem 2rem 4rem;
+      padding: clamp(64px, 8vw, 104px) 0 clamp(56px, 7vw, 88px);
       position: relative;
       overflow: hidden;
     }
-    .hero-bg-dots {
-      position: absolute; inset: 0;
-      background-image: radial-gradient(circle, #ffffff0d 1.5px, transparent 1.5px);
-      background-size: 28px 28px;
-      pointer-events: none;
+
+    .hero-logo {
+    width: min(310px, 68vw);
+    aspect-ratio: 12 / 13;
+    margin: 0 auto 2.4rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(122, 13, 42, 0.16);
+    box-shadow: var(--sombra);
+    background: #9CCEFF;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.1s forwards;
     }
-    .hero-accent {
-      position: absolute;
-      width: 500px; height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, #c8f03a18 0%, transparent 70%);
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
+
+    .hero-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1px;
+    border-radius: 50%;
+    box-sizing: border-box;
     }
-    .hero-kicker {
-      font-size: 11px;
-      letter-spacing: 0.3em;
+
+    .hero-kicker,
+    .eyebrow {
+      margin: 0 0 16px;
+      font-size: 0.73rem;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: var(--lime);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.1s forwards;
+      font-weight: 700;
+      opacity: 0.64;
     }
+
+    .hero-kicker {
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.25s forwards;
+    }
+
+    .hero-title,
+    .section-title,
+    .contact-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+    }
+
     .hero-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(3.5rem, 10vw, 7rem);
-      line-height: 1;
-      color: var(--white);
-      margin-bottom: 1rem;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.2s forwards;
-    }
-    .hero-title em {
-      font-style: italic;
-      color: var(--lime);
-    }
-    .hero-sub {
-      font-size: 16px;
-      color: #888;
-      max-width: 420px;
-      margin: 0 auto 2.5rem;
-      font-weight: 300;
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(3.2rem, 8vw, 7.2rem);
+      color: var(--granate);
       opacity: 0;
       animation: fadeUp 0.7s 0.35s forwards;
     }
-    .hero-tags {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 2.5rem;
+
+    .hero-title em,
+    .section-title em,
+    .contact-title em {
+      font-style: italic;
+      color: var(--granate-suave);
+    }
+
+    .hero-sub {
+      max-width: 590px;
+      margin: 1.35rem auto 0;
+      font-size: clamp(1rem, 1.6vw, 1.18rem);
+      color: rgba(122, 13, 42, 0.72);
       opacity: 0;
       animation: fadeUp 0.7s 0.45s forwards;
     }
-    .pill {
-      padding: 6px 16px;
-      border-radius: 99px;
-      font-size: 12px;
-      border: 0.5px solid #444;
-      color: #ccc;
-      letter-spacing: 0.03em;
-    }
-    .pill.accent { background: var(--lime); color: var(--black); border-color: var(--lime); font-weight: 500; }
-    .pill.hot { background: var(--red); color: #fff; border-color: var(--red); }
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
+
+    .hero-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 10px;
-      background: var(--white);
-      color: var(--black);
-      font-size: 14px;
-      font-weight: 500;
-      padding: 14px 32px;
-      border-radius: 99px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
+      margin-top: 2rem;
       opacity: 0;
       animation: fadeUp 0.7s 0.55s forwards;
     }
-    .hero-cta:hover { background: var(--lime); transform: translateY(-2px); }
+
+    .pill {
+      padding: 8px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(122, 13, 42, 0.22);
+      background: rgba(255, 248, 236, 0.32);
+      color: rgba(122, 13, 42, 0.76);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .pill.accent {
+      background: var(--granate);
+      color: var(--azul-claro);
+      border-color: var(--granate);
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+      min-height: 50px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      background: var(--granate);
+      color: var(--azul-claro);
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 180ms ease, background 180ms ease;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.65s forwards;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      background: var(--granate-oscuro);
+    }
+
     .hero-scroll {
       position: absolute;
-      bottom: 2rem;
+      bottom: 1.8rem;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #555;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 8px;
-      animation: fadeUp 1s 1s forwards;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(122, 13, 42, 0.4);
       opacity: 0;
+      animation: fadeUp 0.8s 1s  forwards;
     }
+
     .scroll-line {
-      width: 1px; height: 40px;
-      background: linear-gradient(to bottom, #555, transparent);
-      animation: scrollPulse 2s infinite;
+      width: 2px;
+      height: 48px;
+      background: linear-gradient(to bottom, var(--granate), transparent);
+      animation: scrollPulse 1s infinite;
     }
 
-    /* ── COLOR STRIP ── */
-    .color-strip {
-      display: flex;
-      height: 6px;
-    }
-    .cs { flex: 1; }
+    /* SECCIONES */
 
-    /* ── SECTION WRAPPER ── */
     .section {
-      padding: 6rem 2rem;
-      max-width: 1100px;
+      width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
+      padding: clamp(72px, 9vw, 116px) 0;
     }
-    .section-label {
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--lime);
-      margin-bottom: 0.75rem;
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.55fr);
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 34px;
     }
+
     .section-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      line-height: 1.1;
-      color: var(--white);
-      margin-bottom: 3rem;
+      margin: 0;
+      font-size: clamp(2.5rem, 5.8vw, 5rem);
     }
-    .section-title em { font-style: italic; color: #888; }
 
-    /* ── PRODUCTS GRID ── */
-    .products-grid {
+    .section-copy {
+      margin: 0;
+      color: rgba(122, 13, 42, 0.72);
+      font-size: 1rem;
+    }
+
+    /* COLECCIÓN */
+
+    .collection-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
     }
-    @media (max-width: 600px) {
-      .products-grid { grid-template-columns: repeat(2, 1fr); }
-      .prod-featured { grid-column: span 2; }
-    }
-    .prod-card {
-      border-radius: 16px;
-      overflow: hidden;
-      position: relative;
-      aspect-ratio: 3/4;
+
+    .collection-card {
+      min-height: 310px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 1.25rem;
-      cursor: pointer;
-      transition: transform 0.3s;
+      justify-content: space-between;
+      padding: 24px;
+      border-radius: var(--radio);
+      background: rgba(255, 248, 236, 0.42);
+      border: 1px solid var(--borde);
+      text-decoration: none;
+      box-shadow: 0 16px 42px rgba(77, 7, 25, 0.08);
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
     }
-    .prod-card:hover { transform: scale(1.02); }
-    .prod-card.bg-mustard { background: #e8a820; }
-    .prod-card.bg-dark { background: #1a1a1a; border: 0.5px solid #333; }
-    .prod-card.bg-red { background: #c0392b; }
-    .prod-card.bg-blue { background: #1a5fa8; }
-    .prod-card.bg-lime { background: #c8f03a; }
-    .prod-card.bg-purple { background: #7b2d8b; }
-    .prod-emoji-big {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -60%);
-      font-size: 52px;
-      pointer-events: none;
-    }
-    .prod-info { position: relative; z-index: 1; }
-    .prod-name {
-      font-size: 14px;
-      font-weight: 500;
-      color: #fff;
-      margin-bottom: 2px;
-    }
-    .prod-card.bg-lime .prod-name { color: var(--black); }
-    .prod-desc {
-      font-size: 11px;
-      color: rgba(255,255,255,0.65);
-    }
-    .prod-card.bg-lime .prod-desc { color: rgba(0,0,0,0.5); }
-    .prod-badge {
-      position: absolute;
-      top: 12px; right: 12px;
-      background: var(--lime);
-      color: var(--black);
-      font-size: 10px;
-      font-weight: 500;
-      padding: 4px 10px;
-      border-radius: 99px;
-      letter-spacing: 0.05em;
-    }
-    .prod-featured { grid-row: span 2; aspect-ratio: auto; min-height: 340px; }
 
-    /* ── VALUES ── */
-    .values-bg {
-      background: #141414;
-      border-top: 0.5px solid #222;
-      border-bottom: 0.5px solid #222;
+    .collection-card:hover,
+    .collection-card:focus-visible {
+      transform: translateY(-5px);
+      box-shadow: var(--sombra);
+      background: rgba(255, 248, 236, 0.62);
+      outline: none;
     }
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-    }
-    @media (max-width: 600px) { .values-grid { grid-template-columns: 1fr; } }
-    .val-item {
-      padding: 3rem 2rem;
-      border-right: 0.5px solid #222;
-    }
-    .val-item:last-child { border-right: none; }
-    .val-num {
-      font-family: 'DM Serif Display', serif;
-      font-size: 3rem;
-      color: var(--lime);
-      line-height: 1;
-      margin-bottom: 0.75rem;
-    }
-    .val-title {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-    .val-desc { font-size: 13px; color: #666; line-height: 1.6; }
 
-    /* ── INSTAGRAM SECTION ── */
-    .ig-section {
-      background: var(--lime);
-      padding: 5rem 2rem;
-      text-align: center;
+    .collection-card.featured {
+      grid-row: span 2;
+      min-height: 638px;
+      background: var(--granate);
+      color: var(--azul-claro);
     }
-    .ig-label {
-      font-size: 10px;
-      letter-spacing: 0.3em;
+
+    .collection-card.featured .card-meta,
+    .collection-card.featured p,
+    .collection-card.featured .card-link {
+      color: rgba(207, 224, 246, 0.78);
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      color: rgba(122, 13, 42, 0.62);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #7a8f20;
-      margin-bottom: 1rem;
     }
-    .ig-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      color: var(--black);
-      margin-bottom: 0.75rem;
-      line-height: 1.1;
-    }
-    .ig-title em { font-style: italic; }
-    .ig-sub {
-      font-size: 15px;
-      color: #5a6a10;
-      margin-bottom: 2.5rem;
-    }
-    .ig-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--black);
-      color: var(--white);
-      font-size: 14px;
-      font-weight: 500;
-      padding: 14px 32px;
-      border-radius: 99px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .ig-btn:hover { background: #222; transform: translateY(-2px); }
 
-    /* ── CONTACT ── */
-    .contact-grid {
+    .collection-card h3 {
+      margin: 44px 0 10px;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 0.96;
+    }
+
+    .collection-card:not(.featured) h3 {
+      font-size: clamp(1.65rem, 2.8vw, 2.35rem);
+    }
+
+    .collection-card p {
+      margin: 0;
+      max-width: 24ch;
+      color: rgba(122, 13, 42, 0.7);
+    }
+
+    .card-link {
+      display: inline-flex;
+      margin-top: 28px;
+      color: var(--granate-suave);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    /* NOSOTRAS */
+
+    .about-band {
+      background: var(--granate);
+      color: var(--azul-claro);
+    }
+
+    .about {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: clamp(70px, 9vw, 112px) 0;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      grid-template-columns: minmax(0, 0.85fr) minmax(280px, 1fr);
+      gap: clamp(36px, 7vw, 92px);
+      align-items: start;
     }
-    @media (max-width: 600px) { .contact-grid { grid-template-columns: 1fr; } }
-    .contact-card {
-      background: #141414;
-      border: 0.5px solid #2a2a2a;
-      border-radius: 16px;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      transition: border-color 0.2s;
-    }
-    .contact-card:hover { border-color: var(--lime); }
-    .cc-icon { font-size: 24px; color: var(--lime); margin-bottom: 4px; }
-    .cc-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #555; }
-    .cc-value { font-size: 16px; font-weight: 500; color: var(--white); }
-    .cc-action {
-      margin-top: 8px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--lime);
-      text-decoration: none;
-    }
-    .cc-action:hover { text-decoration: underline; }
 
-    /* ── FOOTER ── */
-    footer {
-      border-top: 0.5px solid #1e1e1e;
-      padding: 2rem;
+    .about .eyebrow {
+      color: rgba(207, 224, 246, 0.58);
+    }
+
+    .about h2 {
+      margin: 0;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2.6rem, 5.5vw, 5.4rem);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+    }
+
+    .about-text {
+      display: grid;
+      gap: 18px;
+      color: rgba(207, 224, 246, 0.82);
+      font-size: 1.05rem;
+    }
+
+    .about-text p {
+      margin: 0;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .process-card {
+      padding: 24px;
+      border-radius: 24px;
+      border: 1px solid rgba(207, 224, 246, 0.2);
+      background: rgba(207, 224, 246, 0.06);
+    }
+
+    .process-card span {
+      display: inline-block;
+      margin-bottom: 32px;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .process-card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      color: var(--azul-claro);
+    }
+
+    .process-card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: rgba(207, 224, 246, 0.66);
+    }
+
+    .team-photo {
+      margin-top: 3rem;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(168, 200, 240, 0.22);
+      background: rgba(168, 200, 240, 0.06);
+    }
+
+    .team-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 620px;
+      object-fit: cover;
+    }
+
+    .team-photo figcaption {
+      padding: 1rem 1.25rem;
+      color: rgba(168, 200, 240, 0.72);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* CONTACTO */
+
+    .contact-section {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: clamp(72px, 9vw, 112px) 0;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.7fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .contact-panel {
+      padding: clamp(28px, 5vw, 48px);
+      border-radius: 34px;
+      background: rgba(122, 13, 42, 0.07);
+      border: 1px solid var(--borde);
+    }
+
+    .contact-title {
+      margin: 0;
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
+    }
+
+    .contact-panel p {
+      margin: 18px 0 0;
+      color: rgba(122, 13, 42, 0.72);
+      max-width: 52ch;
+    }
+
+    .contact-actions {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-card {
+      display: block;
+      padding: 22px;
+      border-radius: 24px;
+      background: var(--crema);
+      border: 1px solid var(--borde);
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .contact-card:hover,
+    .contact-card:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 44px rgba(77, 7, 25, 0.12);
+      outline: none;
+    }
+
+    .contact-label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.56;
+      font-weight: 700;
+    }
+
+    .contact-value {
+      display: block;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.55rem;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+
+    .contact-desc {
+      display: block;
+      margin-top: 12px;
+      color: rgba(122, 13, 42, 0.64);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      border-top: 1px solid var(--borde);
+      padding: 28px 0;
+      background: rgba(255, 248, 236, 0.42);
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
       flex-wrap: wrap;
-      gap: 1rem;
+      color: rgba(122, 13, 42, 0.62);
+      font-size: 0.86rem;
     }
-    .footer-logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1rem;
-      color: var(--white);
-    }
-    .footer-copy { font-size: 12px; color: #555; }
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-    .footer-links a { font-size: 12px; color: #555; text-decoration: none; }
-    .footer-links a:hover { color: var(--lime); }
 
-    /* ── ANIMATIONS ── */
+    .footer-brand {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.1rem;
+      color: var(--granate);
+    }
+
+    /* ANIMACIONES */
+
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes scrollPulse {
-      0%, 100% { opacity: 0.4; }
-      50%       { opacity: 1; }
+      0%, 100% {
+        opacity: 0.35;
+      }
+
+      50% {
+        opacity: 1;
+      }
     }
 
-    /* ── MOBILE NAV ── */
-    @media (max-width: 700px) {
-      .nav-links { display: none; }
-      nav { padding: 1rem 1.25rem; }
-      .section { padding: 4rem 1.25rem; }
-      .values-grid { grid-template-columns: 1fr; }
-      .val-item { border-right: none; border-bottom: 0.5px solid #222; }
-      .val-item:last-child { border-bottom: none; }
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .section-head,
+      .about,
+      .contact-section {
+        grid-template-columns: 1fr;
+      }
+
+      .collection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .collection-card.featured {
+        grid-row: auto;
+        grid-column: span 2;
+        min-height: 360px;
+      }
     }
 
-    /* ── SVG ICON (inline) ── */
-    .icon-ig { display: inline-block; width: 16px; height: 16px; vertical-align: -3px; }
+    @media (max-width: 680px) {
+      .nav {
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .ig-link {
+        padding: 10px 12px;
+        font-size: 0;
+        gap: 0;
+      }
+
+      .ig-link .icon {
+        margin: 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 4.5rem 0 4rem;
+      }
+
+      .hero-logo {
+        width: min(240px, 68vw);
+        margin-bottom: 2rem;
+      }
+
+      .hero-title {
+        font-size: clamp(3rem, 16vw, 5rem);
+      }
+
+      .hero-scroll {
+        display: none;
+      }
+
+      .collection-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .collection-card.featured {
+        grid-column: auto;
+      }
+
+      .collection-card {
+        min-height: 260px;
+      }
+
+      .contact-value {
+        font-size: 1.28rem;
+      }
+    }
   </style>
 </head>
+
 <body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="index.html" class="brand">Paso a Paso</a>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">Paso a Paso</a>
-    <ul class="nav-links">
-      <li><a href="#coleccion">Colección</a></li>
-      <li><a href="#nosotras">Nosotras</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-    <a href="https://www.instagram.com/pasoapaso______/" target="_blank" class="nav-ig">
-      <svg class="icon-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-      @pasoapaso______
-    </a>
-  </nav>
+      <ul class="nav-links">
+        <li><a href="#coleccion">Colección</a></li>
+        <li><a href="#nosotras">Nosotras</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg-dots"></div>
-    <div class="hero-accent"></div>
-    <p class="hero-kicker">Accesorios artesanales · Madrid</p>
-    <h1 class="hero-title">Hecho<br>a <em>mano.</em><br>Con alma.</h1>
-    <p class="hero-sub">Bolsos de red, gorros, bufandas y accesorios de crochet con lentejuelas — únicos, hechos pieza a pieza.</p>
-    <div class="hero-tags">
-      <span class="pill accent">✨ Colección verano ya disponible</span>
-      <span class="pill">Bolsos de red</span>
-      <span class="pill">Gorros & bufandas</span>
-      <span class="pill hot">Lentejuelas</span>
-    </div>
-    <a href="https://www.instagram.com/pasoapaso______/" target="_blank" class="hero-cta">
-      <svg class="icon-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-      Ver colección en Instagram
-    </a>
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      scroll
-    </div>
-  </section>
+      <a href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener" class="ig-link" aria-label="Abrir Instagram de Paso a Paso">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+        @pasoapaso______
+      </a>
+    </nav>
+  </header>
 
-  <!-- COLOR STRIP -->
-  <div class="color-strip">
-    <div class="cs" style="background:#c8f03a"></div>
-    <div class="cs" style="background:#e63946"></div>
-    <div class="cs" style="background:#1a5fa8"></div>
-    <div class="cs" style="background:#e8a820"></div>
-    <div class="cs" style="background:#7b2d8b"></div>
-    <div class="cs" style="background:#0e0e0e"></div>
-  </div>
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-logo">
+        <img src="logo.jpeg" alt="Paso a Paso logo" />
+      </div>
 
-  <!-- COLECCIÓN -->
-  <div id="coleccion">
-    <div class="section">
-      <p class="section-label">Colección</p>
-      <h2 class="section-title">Todo hecho <em>a mano,</em><br>nada en serie.</h2>
-      <div class="products-grid">
-        <a href="bolsos.html" style="text-decoration:none"><div class="prod-card bg-mustard prod-featured">
-          <div class="prod-emoji-big">👜</div>
-          <div class="prod-info">
-            <p class="prod-name">Bolsos de red</p>
-            <p class="prod-desc">Crochet artesanal · varios colores</p>
-          </div>
+      <p class="hero-kicker">Accesorios artesanales · Madrid</p>
+
+      <h1 id="hero-title" class="hero-title">
+        Hecho a mano,<br>
+        <em>paso a paso.</em>
+      </h1>
+
+      <p class="hero-sub">
+        Accesorios de crochet hechos por amigas para darle color, textura y personalidad a tu look.
+      </p>
+
+      <a href="#coleccion" class="hero-cta">
+        Ver colección
+      </a>
+ 
+      <div class="hero-scroll" aria-hidden="true">
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- COLECCIÓN -->
+    <section id="coleccion" class="section" aria-labelledby="coleccion-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Colección</p>
+          <h2 id="coleccion-title" class="section-title">Piezas <em>únicas.</em></h2>
         </div>
-        <div class="prod-card bg-dark">
-          <div class="prod-badge">Nuevo</div>
-          <div class="prod-emoji-big">📿</div>
-          <div class="prod-info">
-            <p class="prod-name">Collares</p>
-            <p class="prod-desc">Crochet con lentejuelas</p>
-          </div>
+
+        <p class="section-copy">
+          Accesorios hechos con tiempo, color y pequeñas diferencias que hacen única cada pieza.
+        </p>
+      </div>
+
+      <div class="collection-grid">
+        <a class="collection-card featured" href="bolsos.html">
+          <span class="card-meta"><span>01</span><span>Best seller</span></span>
+          <span>
+            <h3>Bolsos de crochet</h3>
+            <p>Crochet ligero para diario, playa o mercado. Colores según disponibilidad.</p>
+            <span class="card-link">Ver bolsos →</span>
+          </span>
+        </a>
+
+        <a class="collection-card" href="cinturones.html">
+          <span class="card-meta"><span>02</span><span>Nuevo</span></span>
+          <span>
+            <h3>Cinturones</h3>
+            <p>Tricot con brillo y lentejuelas para dar fuerza a tus looks de verano.</p>
+            <span class="card-link">Ver cinturones →</span>
+          </span>
+        </a>
+
+        <a class="collection-card" href="collares.html">
+          <span class="card-meta"><span>03</span><span>Nuevo</span></span>
+          <span>
+            <h3>Collares</h3>
+            <p>Collares diferentes, coloridos y hechos para dar un toque especial al look.</p>
+            <span class="card-link">Ver collares →</span>
+          </span>
+        </a>
+
+        <a class="collection-card" href="gorros.html">
+          <span class="card-meta"><span>04</span><span>Invierno</span></span>
+          <span>
+            <h3>Gorros</h3>
+            <p>Lana suave, colores vivos y tallas cómodas para días fríos.</p>
+            <span class="card-link">Ver gorros →</span>
+          </span>
+        </a>
+
+        <a class="collection-card" href="bufandas.html">
+          <span class="card-meta"><span>05</span><span>Invierno</span></span>
+          <span>
+            <h3>Bufandas</h3>
+            <p>Bufandas tejidas con textura, abrigo y combinaciones de color.</p>
+            <span class="card-link">Ver bufandas →</span>
+          </span>
+        </a>
+
+        <a class="collection-card" href="mitones.html">
+          <span class="card-meta"><span>06</span><span>Invierno</span></span>
+          <span>
+            <h3>Mitones</h3>
+            <p>Para manos calentitas sin perder comodidad ni color.</p>
+            <span class="card-link">Ver mitones →</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- NOSOTRAS -->
+    <section id="nosotras" class="about-band" aria-labelledby="nosotras-title">
+      <div class="about">
+        <div>
+          <p class="eyebrow">Nosotras</p>
+          <h2 id="nosotras-title">Una marca pequeña hecha entre amigas, sin prisa y con mucho color.</h2>
         </div>
-        <a href="gorros.html" style="text-decoration:none"><div class="prod-card bg-lime">
-          <div class="prod-emoji-big">🧢</div>
-          <div class="prod-info">
-            <p class="prod-name">Gorros</p>
-            <p class="prod-desc">Tejidos a mano</p>
+
+        <div class="about-text">
+          <p>
+            Paso a Paso nace de juntarnos, probar combinaciones, deshacer puntos y volver a empezar hasta hacer piezas que nosotras mismas nos pondríamos.
+          </p>
+
+          <p>
+            No buscamos que todo salga idéntico. Nos gustan las pequeñas diferencias, los colores inesperados y que cada accesorio tenga algo suyo.
+          </p>
+
+          <div class="process-grid" aria-label="Cómo pedir">
+            <article class="process-card">
+              <span>01</span>
+              <h3>Elige la pieza</h3>
+              <p>Mira la colección y dinos cuál va contigo. Cada pieza se hace a mano, punto a punto, sin producción en masa y sin atajos.</p>
+            </article>
+
+            <article class="process-card">
+              <span>02</span>
+              <h3>Vemos colores</h3>
+              <p>Te contamos qué tonos hay disponibles y qué combinaciones podemos preparar. Nos gustan las paletas atrevidas, vibrantes y nada obvias.</p>
+            </article>
+
+            <article class="process-card">
+              <span>03</span>
+              <h3>La preparamos</h3>
+              <p>La hacemos con calma, en series pequeñas y con pequeñas diferencias. No hay dos iguales.</p>
+            </article>
           </div>
-        </div>
-        <a href="bufandas.html" style="text-decoration:none"><div class="prod-card bg-red">
-          <div class="prod-emoji-big">🧣</div>
-          <div class="prod-info">
-            <p class="prod-name">Bufandas</p>
-            <p class="prod-desc">Lana artesanal</p>
-          </div>
-        </div>
-        <div class="prod-card bg-dark">
-          <div class="prod-emoji-big">🧤</div>
-          <div class="prod-info">
-            <p class="prod-name">Mitones</p>
-            <p class="prod-desc">Crochet a mano</p>
-          </div>
-        </div>
-        <div class="prod-card bg-purple">
-          <div class="prod-badge">Nuevo</div>
-          <div class="prod-emoji-big">✨</div>
-          <div class="prod-info">
-            <p class="prod-name">Cinturones</p>
-            <p class="prod-desc">Crochet con lentejuelas</p>
-          </div>
+
+          <figure class="team-photo">
+            <img src="foto-nosotras.jpeg" alt="Nosotras haciendo piezas de Paso a Paso" />
+            <figcaption>Hecho por nosotras! </figcaption>
+          </figure>
         </div>
       </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact-section" aria-labelledby="contacto-title">
+      <div class="contact-panel">
+        <p class="eyebrow">Contacto</p>
+        <h2 id="contacto-title" class="contact-title">¿Hacemos una pieza <em>para ti?</em></h2>
+        <p>
+          Escríbenos por Instagram con el modelo que te gusta. Te contamos disponibilidad, colores y tiempos de preparación.
+        </p>
+      </div>
+
+      <div class="contact-actions">
+        <a class="contact-card" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">
+          <span class="contact-label">Instagram</span>
+          <span class="contact-value">@pasoapaso______</span>
+          <span class="contact-desc">Novedades, colores disponibles, piezas terminadas y un poco del proceso.</span>
+        </a>
+
+        <a class="contact-card" href="mailto:pasoapasoacc@gmail.com">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">pasoapasoacc@gmail.com</span>
+          <span class="contact-desc">Para pedidos, dudas o colaboraciones.</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-brand">Paso a Paso</span>
+      <span>Accesorios hechos a mano · Desde 2025</span>
     </div>
-  </div>
-
-  <!-- VALUES -->
-  <div id="nosotras" class="values-bg">
-    <div class="values-grid" style="max-width:1100px; margin:0 auto;">
-      <div class="val-item">
-        <div class="val-num">01</div>
-        <p class="val-title">100% artesanal</p>
-        <p class="val-desc">Cada pieza tejida a mano, punto a punto. Sin producción en masa, sin atajos.</p>
-      </div>
-      <div class="val-item">
-        <div class="val-num">02</div>
-        <p class="val-title">Colores únicos</p>
-        <p class="val-desc">Paletas atrevidas y vibrantes que no encontrarás en ninguna otra marca.</p>
-      </div>
-      <div class="val-item">
-        <div class="val-num">03</div>
-        <p class="val-title">Piezas exclusivas</p>
-        <p class="val-desc">Series limitadas. Cuando se acaba, se acaba. Cada accesorio es irrepetible.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- INSTAGRAM -->
-  <div class="ig-section">
-    <p class="ig-label">Síguenos</p>
-    <h2 class="ig-title">Todo el proceso,<br><em>en Instagram.</em></h2>
-    <p class="ig-sub">Drops, novedades, behind the scenes y los mejores looks</p>
-    <a href="https://www.instagram.com/pasoapaso______/" target="_blank" class="ig-btn">
-      <svg class="icon-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-      @pasoapaso______
-    </a>
-  </div>
-
-  <!-- CONTACTO -->
-  <div id="contacto">
-    <div class="section">
-      <p class="section-label">Contacto</p>
-      <h2 class="section-title">¿Te interesa<br>algo?</h2>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <svg class="cc-icon" style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" stroke="#c8f03a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#c8f03a" stroke="none"/></svg>
-          <p class="cc-label">Instagram</p>
-          <p class="cc-value">@pasoapaso______</p>
-          <a href="https://www.instagram.com/pasoapaso______/" target="_blank" class="cc-action">Ir al perfil →</a>
-        </div>
-        <div class="contact-card">
-          <svg class="cc-icon" style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" stroke="#c8f03a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><polyline points="2,7 12,13 22,7"/></svg>
-          <p class="cc-label">Email</p>
-          <p class="cc-value">hola@pasoapasoacc.es</p>
-          <a href="mailto:hola@pasoapasoacc.es" class="cc-action">Enviar email →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <span class="footer-logo">Paso a Paso</span>
-    <p class="footer-copy">© 2025 Paso a Paso · Accesorios artesanales</p>
-    <ul class="footer-links">
-      <li><a href="#coleccion">Colección</a></li>
-      <li><a href="https://www.instagram.com/pasoapaso______/" target="_blank">Instagram</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
   </footer>
-
-
-  <script>
-    const links = {
-      'Bolsos de red': 'bolsos.html',
-      'Collares': 'collares.html',
-      'Gorros': 'gorros.html',
-      'Bufandas': 'bufandas.html',
-      'Mitones': 'mitones.html',
-      'Cinturones': 'cinturones.html',
-    };
-    document.querySelectorAll('.prod-card').forEach(card => {
-      const name = card.querySelector('.prod-name')?.textContent.trim();
-      if (links[name]) {
-        card.style.cursor = 'pointer';
-        card.addEventListener('click', () => window.location.href = links[name]);
-      }
-    });
-  </script>
 </body>
 </html>
