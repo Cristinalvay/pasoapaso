@@ -447,7 +447,25 @@
     .product-link.is-saved {
       background: var(--granate-oscuro);
     }
+    .product-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: auto;
+      padding-top: 22px;
+    }
 
+    .product-price {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--granate);
+      white-space: nowrap;
+    }
+
+    .product-actions .product-link {
+      margin-top: 0;
+    }
     .saved-panel {
       display: grid;
       grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.7fr);
@@ -769,7 +787,7 @@
       }
     }
     .cta-title em.cta-highlight {
-      color: var(--tinta);
+      color: var(--azulS);
     }
   </style>
 </head>
@@ -817,7 +835,7 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">Gorros en uso</p>
-          <h2 id="mix-title" class="section-title">Color, lana y <em>calle.</em></h2>
+          <h2 id="mix-title" class="section-title">Color, lana y <em>abrigo.</em></h2>
         </div>
         <p class="section-copy">
         </p>
@@ -892,7 +910,10 @@
             <p class="product-kicker">Gorro</p>
             <h3>Gorro azul</h3>
             <p>Azul intenso con contraste celeste. Suave, llamativo y hecho para destacar con cualquier look de invierno.</p>
-            <button class="product-link product-save" type="button" data-product="Gorro azul">Guardar pieza</button>
+            <div class="product-actions">
+              <strong class="product-price">17.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Mitones verdes">Guardar pieza</button>
+            </div>          
           </div>
         </article>
 
@@ -923,7 +944,10 @@
             <p class="product-kicker">Gorro</p>
             <h3>Gorro verde</h3>
             <p>Verde suave con mucha textura. Una pieza cómoda, diferente y con mucho carácter.</p>
-            <button class="product-link product-save" type="button" data-product="Gorro verde">Guardar pieza</button>
+            <div class="product-actions">
+              <strong class="product-price">17.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Mitones verdes">Guardar pieza</button>
+            </div>
           </div>
         </article>
 
@@ -957,8 +981,10 @@
             <p class="product-kicker">Gorro</p>
             <h3>Gorro amarillo</h3>
             <p>Amarillo y blanco, luminoso y divertido. Colores que cambian el look completo.</p>
-            <button class="product-link product-save" type="button" data-product="Gorro amarillo">Guardar pieza</button>
-          </div>
+            <div class="product-actions">
+              <strong class="product-price">17.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Mitones verdes">Guardar pieza</button>
+            </div>          </div>
         </article>
 
         <article class="product-card">
@@ -981,7 +1007,10 @@
             <p class="product-kicker">Gorro</p>
             <h3>Gorro morado</h3>
             <p>Morado con contraste oscuro. Una pieza especial con mucha personalidad.</p>
-            <button class="product-link product-save" type="button" data-product="Gorro morado">Guardar pieza</button>
+            <div class="product-actions">
+              <strong class="product-price">17.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Mitones verdes">Guardar pieza</button>
+            </div>          
           </div>
         </article>
 
@@ -1008,7 +1037,10 @@
             <p class="product-kicker">Gorro</p>
             <h3>Gorro rosa</h3>
             <p>Rosa y blanco, suave y con textura. Una pieza dulce, pero con presencia.</p>
-            <button class="product-link product-save" type="button" data-product="Gorro rosa">Guardar pieza</button>
+            <div class="product-actions">
+              <strong class="product-price">17.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Mitones verdes">Guardar pieza</button>
+            </div>          
           </div>
         </article>
 
@@ -1035,7 +1067,10 @@
             <p class="product-kicker">Gorro</p>
             <h3>Gorro marrón</h3>
             <p>Marrón cálido, suave y fácil de combinar. Un básico especial, hecho con textura y calma.</p>
-            <button class="product-link product-save" type="button" data-product="Gorro marrón">Guardar pieza</button>
+            <div class="product-actions">
+              <strong class="product-price">17.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Gorro marrón">Guardar pieza</button>
+            </div>
           </div>
         </article>
       </div>
@@ -1291,7 +1326,6 @@
           openEmailLink.href = mailto;
         }
 
-        window.location.href = mailto;
       });
     }
 
